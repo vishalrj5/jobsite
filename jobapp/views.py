@@ -22,20 +22,7 @@ class UserRegView(CreateView):
     model = MyUserModel
     form_class = AccountCreateForm
     template_name = "./jobapp/register.html"
-    # success_url = reverse_lazy("signup")
-    def post(self,request,*args,**kwargs):
-        form = self.form_class(request.POST)
-        role = request.POST.get("role")
-        print(role)
-        if form.is_valid():
-            form.save()
-            if role == "job seeker":
-                context={"form" : UserProfileForm}
-                return render(request,"./jobapp/Employee.html",context)
-                print("perfect okay",form.data)
+    success_url = reverse_lazy("signin")
 
-        return render(request,"./jobapp/login.html")
-
-    # success_url = reverse_lazy("signin")
 
 

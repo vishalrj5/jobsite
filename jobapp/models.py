@@ -22,6 +22,8 @@ class EmployerProfileModel(models.Model):
     company_name=models.OneToOneField(MyUserModel,on_delete=models.CASCADE)
     location=models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.location
 
 class Job(models.Model):
     job_title = models.CharField(max_length=30)
