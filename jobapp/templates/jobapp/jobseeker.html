@@ -5,11 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-Login Page
+Welcome {{request.user}}<br>
+You are a Job Seeker <br>
+Please update these fields
 <form action="" method="post">
     {%csrf_token%}
     {{form.as_p}}
-    <input type="submit" value="SignIn">
+    <input type="submit" value="update">
 </form>
+<a href="{%url 'signout' %}">signout</a>
 </body>
 </html>

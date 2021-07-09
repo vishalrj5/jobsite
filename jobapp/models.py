@@ -12,6 +12,10 @@ class MyUserModel(AbstractUser):
             ("Employer","Employer"))
     role=models.CharField(max_length=25,choices=option,default="job seeker")
 
+    # def save(self, *args, **kwargs):
+    #     if self.role=="job seeker":
+    #         print()
+
 class UserProfileModel(models.Model):
     user=models.OneToOneField(MyUserModel,on_delete=models.CASCADE)
     qualification=models.CharField(max_length=20)

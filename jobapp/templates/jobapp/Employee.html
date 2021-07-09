@@ -5,11 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-Employee
+welcome {{request.user}} Employer <br>
+Ready to serve jobs ?
+Please update these fields
 <form action="" method="post">
-  {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Register">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="update">
 </form>
+<a href="{%url 'signout' %}">signout</a>
 </body>
 </html>
